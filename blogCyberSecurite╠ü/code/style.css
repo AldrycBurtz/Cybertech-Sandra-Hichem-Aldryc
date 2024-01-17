@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&family=Overpass&family=Proza+Libre&display=swap');
+
+* ::after ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root{
+
+    --prune: #38BFF0;
+    --salade:#292929;
+    --pasteque:#00FAA8;
+    --titre:'Hind Siliguri', sans-serif;
+    --texte:'Overpass', sans-serif;;
+    --sous-titre: 'Proza Libre', sans-serif;;
+}
+
+header{
+
+    background-color: var(--pasteque);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+  
+}
+nav{
+    display:flex;
+
+}
+ul {
+    display:flex;
+    list-style: none;
+    
+}
+
+
+
+
+
+.navbar-collapse{
+    flex-grow: 0;
+}
+
+main{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.presentation{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 5%;
+    width: 95%;
+    padding: 3%;
+    margin-top: 8%;
+    
+}
+
+.grille{
+    /*display: flex;
+    flex-wrap: wrap;*/
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    gap: 2%;
+    width: 85%;
+    margin-left: 2%;
+    
+    
+   
+}
+
+.secGrille{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 3%;
+    
+    
+
+
+
+}
+
+aside{
+    font-size: large;
+    text-align: left;
+    background-color : #f8f9fa ;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0, 0,
+    0, .5) ;
+    border: 1px solid var(--salade);
+    border-radius: 20px;
+    width: 18rem;
+    margin-right: 2%;
+    padding: 1%;
+    height: 280vh;
+}
+
+.card{
+     box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 rgba(0,0,0,.19) ; 
+    text-align: left;
+    margin: 1% 1%;
+    width: 19rem;
+    gap: 4%;
+   
+    
+    }
+
+.card p{
+    padding: 1%;
+    
+    
+}
+
+.vu{
+    display: flex;
+    justify-content: space-around;
+   
+}
+i{
+    width: 1rem;
+}
+
+
+
+   
+
+
+
+
+
+
+footer{
+    height: 40vh;
+    background-color: var(--pasteque);
+    z-index: 1;
+}
+
+    @media screen and (max-width: 700px){
+
+
+
+
+        .grille{
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        aside{
+            display:none;
+        }
+
+        .card{
+            width: 35rem;
+        }
+
+        .presentation{
+            margin-top: 15%;
+        }
+
+
+}
+
+
+
+
