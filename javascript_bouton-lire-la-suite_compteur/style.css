@@ -1,0 +1,18 @@
+article{
+    width: 20%;
+}
+
+.text{
+    height: 9.3rem;
+    overflow: hidden; 
+}
+
+.readMore{
+    width: 6rem;
+    color: red;
+}
+
+.readMore:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
