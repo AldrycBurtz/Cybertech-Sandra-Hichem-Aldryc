@@ -109,7 +109,6 @@ footer a {
     transition-delay: 120ms;
   }
 
-
   /* Partie inférieur du Footer */
 
 .footer_absolute {
@@ -167,4 +166,47 @@ footer a {
     grid-row: 3/3;
     width: 100%;
     max-height: 1px;
+}
+
+@media screen and (max-width: 700px){
+
+    .footer_avis {
+        width: auto;
+        padding-top: 5%;
+        padding-left: 5%;
+        padding-right: 3%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        font-size: 0.8rem;
+    }
+
+    .footer_avis h6 {
+        font-size: 1.2rem;
+    }
+
+    .footer_absolute {
+        width: auto;
+        padding-top: 3%;
+        padding-left: 4%;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 10px;
+        font-family: sans-serif;
+    }
+
+    .grid_footer_absolute_1 {
+        height: 4rem;
+    }
+
+    .footer_absolute a {
+        font-size: 0.625rem;
+    }
+
+    .footer_absolute_logo{
+        margin-left: 4rem;
+        width: 50%;
+        height: 10%;
+        object-position: center;
+    }
 }
