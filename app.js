@@ -4,13 +4,13 @@
 // Récupère tous les boutons "Lire la suite" simultanément
 const allReadMore = document.querySelectorAll(".readMore");
 
-const allReadMore = document.querySelectorAll(".carousel-item");
-
 // Récupère tous les boutons "Lire la suite" des articles plus-lus
 const allReadMorePlusLus = document.querySelectorAll(".readMore-plus-lus");
 
 // Récupère toutes les class "text-hide" des articles plus-lus
 const allTextHide = document.querySelectorAll(".text-hide");
+
+const allCarousel = document.querySelectorAll(".carousel-item");
 
 // Récupère toutes les modales simultanément
 const allModale = document.querySelectorAll(".modale");
@@ -24,8 +24,11 @@ const allNumberVue = document.querySelectorAll(".numberVue");
 // Récupère tous les articles normaux
 const allCards = document.querySelectorAll(".card");
 
+const arrayReadMorePlusLus = Array.from(allReadMorePlusLus);
 
 const arrayTextHide = Array.from(allTextHide);
+
+const arrayCarousel = Array.from(allCarousel);
 
 //créé un tableau de la Node List des boutons "readMore"
 const arrayReadMore = Array.from(allReadMore);
@@ -43,36 +46,33 @@ const arrayNumberVue = Array.from(allNumberVue);
 // -------------------- FONCTIONS -------------------- //
 
 
-// ----- Affichage modale & Nombre de vue ------ //
+// ----- Affichage "Lire la suite" articles plus lus ------ //
 
 allReadMorePlusLus.forEach(function(readMorePlusLus) {
 
   let counter = 0
 
-  //lorsque l'on clique sur un bouton
   readMorePlusLus.addEventListener("click", () =>{
 
-    //ajoute 1 au compteur du bouton concerné
-    counter++
+    // counter++
 
-    //prends l'index du bouton
-    i = arrayTextHide.indexOf(readMorePlusLus)
+    i = arrayReadMorePlusLus.indexOf(readMorePlusLus)
 
-    //sélectionne le p ayant le même index que "i" et remplace le texte d'origine par "Nombre de vu : counter"
-    arrayNumberVue[i].textContent = `Nombre de vu : ${(counter)}`
+    // arrayNumberVue[i].textContent = `Nombre de vu : ${(counter)}`
 
-    //sélectionne la modale ayant le même index que "i" et l'affiche en block
     arrayTextHide[i].style.display = "block";
+    arrayCarousel[i].style.height = "200vh";
+    arrayCarousel[i].style.margin = "0rem 0";
 
-    //sélectionne le bouton exit ayant le même index que "i"
     arrayExit[i].addEventListener("click", () =>{
 
-      //sélectionne la modale ayant le même index que "i" et l'affiche en none
       arrayTextHide[i].style.display = "none";
     })
 
   })
 })
+
+// ----- Affichage modale & Nombre de vue ------ //
 
 //pour chaque élément contenant la classe .readMore, 
 allReadMore.forEach(function(readMore) {
@@ -130,9 +130,3 @@ function search_article() {
     }
   })
 }
-
-
-// .carousel-inner {
-//   height: 71rem;
-//   padding-top: 10rem;
-// }

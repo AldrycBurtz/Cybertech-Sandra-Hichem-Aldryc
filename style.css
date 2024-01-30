@@ -109,7 +109,7 @@ ul {
 
 
 .readMore {
-  width: 131px;
+  width: 8rem;
   color: var(--bleu);
 }
 
@@ -125,6 +125,12 @@ ul {
 
 .readMore-plus-lus {
   width: 6rem;
+  color: var(--bleu);
+}
+
+.readMore-plus-lus:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .img-caroussel {
