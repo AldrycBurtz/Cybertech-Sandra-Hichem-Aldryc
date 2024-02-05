@@ -74,14 +74,19 @@ ul {
 }
 
 /* test carrousel*/
-
+/* 
 .containerCarrousel {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   width: 60%;
   height: 96vh;
+} */
+
+.containerCarrousel {
+  width: 60%;
 }
+
 .caroussel {
   display: flex;
   flex-direction: column;
@@ -90,27 +95,32 @@ ul {
 }
 
 .carousel-inner {
-  height: 95vh;
+  min-height: 45rem;
 }
 
 .carousel-item {
-  text-align: center;
   background-color: white;
   padding: 2%;
   border-radius: 20px;
   font-size: 0.8rem;
   padding-bottom: 3%;
-  height: 100%;
+  height: 89%;
 }
 
-.carousel-item.active{
-  background-color: white;
+.carousel-item img {
+  height: 50vh;
+  padding-top: 1%;
+  border-radius: 20px;
 }
 
+.carousel-control-prev {
+  margin-bottom: 30%;
+  height: 49%;
+}
 
-.readMore {
-  width: 8rem;
-  color: var(--bleu);
+.carousel-control-next {
+  margin-bottom: 30% !important;
+  height: 49%;
 }
 
 .readMore:hover {
@@ -118,14 +128,20 @@ ul {
   cursor: pointer;
 }
 
-.readMore a, .exit-article a {
+.readMore, .exit-article a {
   color: unset;
   text-decoration: none;
+}
+
+.readMore {
+  width: 8rem;
+  color: var(--bleu);
 }
 
 .readMore-plus-lus {
   width: 6rem;
   color: var(--bleu);
+ 
 }
 
 .readMore-plus-lus:hover {
@@ -143,6 +159,10 @@ ul {
   background-size: cover;
 }
 
+.text-caroussel{
+  padding: 0rem 2rem;
+}
+
 .text-hide {
   display: none;
 }
@@ -157,26 +177,6 @@ h3 {
   align-items: center;
   margin-top: 3%;
   padding: 2%;
-}
-
-.carousel-item {
-  height: 80%;
-}
-
-.carousel-item img {
-  height: 50vh;
-  padding-top: 1%;
-  border-radius: 20px;
-}
-
-.carousel-control-prev {
-  margin-bottom: 30%;
-  height: 49%;
-}
-
-.carousel-control-next {
-  margin-bottom: 30% !important;
-  height: 49%;
 }
 /*Article 1 carrousel */
 
@@ -256,7 +256,7 @@ h3 {
 .plus-lus {
   width: 100%;
   background-color: var(--noir);
-  text-align: center;
+  /* text-align: center; */
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -359,14 +359,13 @@ i {
   margin-left: auto;
   margin-top: 3%;
   width: 60%;
-  height: 112rem;
+  height: 100rem;
   z-index: 2;
 }
 
 .banner-article-lu {
   width: 100%;
-  height: 13%;
-  background-size: contain;
+  height: 20rem;
   background-repeat: no-repeat;
   background-position-y: center;
   background-size: cover;
@@ -760,8 +759,12 @@ rating input[type=radio]:checked ~ input[type=radio]:not(:checked)::after{
 
   .containerCarrousel {
     width: 90%;
-    height: 56vh;
+    min-height: 1vh;
     align-items: unset !important;
+  }
+
+  .carousel-inner {
+    min-height: 27rem;
   }
 
   .carousel-item {
@@ -769,7 +772,7 @@ rating input[type=radio]:checked ~ input[type=radio]:not(:checked)::after{
   }
 
   .img-caroussel {
-    height: 40%;
+    height: 10rem;
   }
 
   .carousel-control-prev {

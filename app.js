@@ -10,7 +10,7 @@ const allReadMorePlusLus = document.querySelectorAll(".readMore-plus-lus");
 // Récupère toutes les class "text-hide" des articles plus-lus
 const allTextHide = document.querySelectorAll(".text-hide");
 
-const allCarousel = document.querySelectorAll(".carousel-item");
+const carousel = document.querySelector(".carousel-inner");
 
 // Récupère toutes les modales simultanément
 const allModale = document.querySelectorAll(".modale");
@@ -27,8 +27,6 @@ const allCards = document.querySelectorAll(".card");
 const arrayReadMorePlusLus = Array.from(allReadMorePlusLus);
 
 const arrayTextHide = Array.from(allTextHide);
-
-const arrayCarousel = Array.from(allCarousel);
 
 //créé un tableau de la Node List des boutons "readMore"
 const arrayReadMore = Array.from(allReadMore);
@@ -50,27 +48,33 @@ const arrayNumberVue = Array.from(allNumberVue);
 
 allReadMorePlusLus.forEach(function(readMorePlusLus) {
 
-  let counter = 0
+  let counter = 10
+  let counterBtn = 0
 
   readMorePlusLus.addEventListener("click", () =>{
 
-    // counter++
+    counterBtn++
+    console.log(counterBtn)
 
     i = arrayReadMorePlusLus.indexOf(readMorePlusLus)
 
-    // arrayNumberVue[i].textContent = `Nombre de vu : ${(counter)}`
+    if(counterBtn===1){
+      counter++
+      arrayNumberVue[i].textContent = `Nombre de vu : ${(counter)}`
+      arrayTextHide[i].style.display = "block";
+      carousel.style.margin = "0 0 10% 0";
+      arrayReadMorePlusLus[i].textContent = `Fermer l'article`
+    }
 
-    arrayTextHide[i].style.display = "block";
-    arrayCarousel[i].style.height = "200vh";
-    arrayCarousel[i].style.margin = "0rem 0";
-
-    arrayExit[i].addEventListener("click", () =>{
-
+    else if(counterBtn===2){
       arrayTextHide[i].style.display = "none";
-    })
-
+      carousel.style.margin = "0 0 0 0";
+      arrayReadMorePlusLus[i].textContent = `Lire la suite .....`
+      counterBtn = 0;
+    }
   })
 })
+
 
 // ----- Affichage modale & Nombre de vue ------ //
 
@@ -88,8 +92,12 @@ allReadMore.forEach(function(readMore) {
     //prends l'index du bouton
     i = arrayReadMore.indexOf(readMore)
 
+    i=i+3
+
     //sélectionne le p ayant le même index que "i" et remplace le texte d'origine par "Nombre de vu : counter"
     arrayNumberVue[i].textContent = `Nombre de vu : ${(counter)}`
+
+    i = arrayReadMore.indexOf(readMore)
 
     //sélectionne la modale ayant le même index que "i" et l'affiche en block
     arrayModale[i].style.display = "block";
