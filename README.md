@@ -30,7 +30,7 @@ Cette extension peut être installer avec l'icone extensions à gauche dans la l
 
 ![alt text](https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_08_34.jpg)
 
-Il faudra ensuite cliquer sur le bouton live server à partir du fichier index.html en bas à droite pour afficher la page :
+Il faudra ensuite cliquer sur le bouton "Go Live" à partir du fichier index.html en bas à droite pour afficher la page :
 
 ![alt text](https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_11_39.jpg)
 
