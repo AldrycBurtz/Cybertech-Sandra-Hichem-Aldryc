@@ -24,6 +24,14 @@ const allNumberVue = document.querySelectorAll(".numberVue");
 // Récupère tous les articles normaux
 const allCards = document.querySelectorAll(".card");
 
+// Button deroulant du formulaire.
+const allButtonShow = document.querySelectorAll(".showFormulaire");
+
+const allForm = document.querySelectorAll(".form-horizontal");
+
+
+
+// ---------------Tableaux------------------
 const arrayReadMorePlusLus = Array.from(allReadMorePlusLus);
 
 const arrayTextHide = Array.from(allTextHide);
@@ -40,6 +48,13 @@ const arrayExit = Array.from(allExit);
 //créé un tableau de la Node List des p "Nombre de vu:"
 const arrayNumberVue = Array.from(allNumberVue);
 
+//créé un tableau de la node liste des buttons formulaire
+
+const arrayButtonShow = Array.from(allButtonShow);
+
+const arrayForm = Array.from(allForm);
+
+
 
 // -------------------- FONCTIONS -------------------- //
 
@@ -54,7 +69,7 @@ allReadMorePlusLus.forEach(function(readMorePlusLus) {
   readMorePlusLus.addEventListener("click", () =>{
 
     counterBtn++
-    console.log(counterBtn)
+    
 
     i = arrayReadMorePlusLus.indexOf(readMorePlusLus)
 
@@ -111,6 +126,36 @@ allReadMore.forEach(function(readMore) {
 
   })
 })
+
+// ----- Affichage du formulaire ------ //
+
+allButtonShow.forEach(function(buttonShow) {
+
+  let counterBtnShow =  0;
+  i =  arrayButtonShow.indexOf(buttonShow);
+
+  //counter pour le button  show 
+  buttonShow.addEventListener('click', () =>{
+    counterBtnShow ++;
+    
+  //ouvrir form + show-form + changement text 
+    if (counterBtnShow===1){
+      arrayForm[i].style.display = "flex";
+      arrayButtonShow[i].textContent = `Fermer`
+      
+    }
+
+  // fermé form + changement text
+    else if(counterBtnShow===2){
+      arrayForm[i].style.display = "none";
+      arrayButtonShow[i].textContent = `Cliquez-ici`
+      counterBtnShow = 0
+      
+    }
+  }
+    
+  )})
+    
 
 
 // ----- Barre de recherche ------ //
