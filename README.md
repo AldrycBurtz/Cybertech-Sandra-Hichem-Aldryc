@@ -28,8 +28,6 @@ Cette extension peut être installer avec l'icone extensions à gauche dans la l
 
 ![alt text](https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_08_14.jpg)
 
-![alt text](https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_08_25.jpg)
-
 ![alt text](https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_08_34.jpg)
 
 ![alt text](https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_11_39.jpg)
