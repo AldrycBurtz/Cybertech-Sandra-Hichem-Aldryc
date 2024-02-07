@@ -27,14 +27,14 @@ Une fois que vous avez installé et ouvert VSCode il faudra alors chercher une e
 Cette extension peut être installer avec l'icone extensions à gauche dans la liste des icones comme sur les images ci-dessous :
 
 ![Cover]
-(https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_08_14.png)
+(https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_08_14.jpg)
 
 ![Cover]
-(https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_08_25.png)
+(https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_08_25.jpg)
 
 ![Cover]
-(https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_08_34.png)
+(https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_08_34.jpg)
 
 ![Cover]
-(https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_11_39.png)
+(https://github.com/AldrycBurtz/Cybertech-Sandra-Hichem-Aldryc/blob/master/assets/images/Visual%20Studio%20Code%2007_02_2024%2013_11_39.jpg)
 
