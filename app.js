@@ -1,90 +1,121 @@
 // -------------------- CONSTANTES -------------------- //
 
 
-// Récupère tous les boutons "Lire la suite" simultanément
-const allReadMore = document.querySelectorAll(".readMore");
-
-// Récupère tous les boutons "Lire la suite" des articles plus-lus
-const allReadMorePlusLus = document.querySelectorAll(".readMore-plus-lus");
-
-// Récupère toutes les class "text-hide" des articles plus-lus
-const allTextHide = document.querySelectorAll(".text-hide");
-
-const carousel = document.querySelector(".carousel-inner");
-
-// Récupère toutes les modales simultanément
-const allModale = document.querySelectorAll(".modale");
-
-// Récupère tous les boutons "exit"
-const allExit = document.querySelectorAll(".exit-article");
-
-// Récupère tous les p contenant "Nombre de vu:"
-const allNumberVue = document.querySelectorAll(".numberVue");
+// -- pour la barre de recherche -- //
 
 // Récupère tous les articles normaux
 const allCards = document.querySelectorAll(".card");
 
-// Button deroulant du formulaire.
-const allButtonShow = document.querySelectorAll(".showFormulaire");
 
+// -- pour l'affichage complet des articles les plus lus -- //
+
+// Récupère le carousel
+const carousel = document.querySelector(".carousel-inner");
+
+// Récupère tous les boutons "Lire la suite" des articles les plus-lus
+const allReadMorePopular = document.querySelectorAll(".readMore-popular");
+
+// Récupère tous les textes "text-hide" des articles les plus-lus
+const allTextHide = document.querySelectorAll(".text-hide");
+
+
+// -- pour l'affichage des modales -- //
+
+// Récupère tous les boutons "Lire la suite" des articles normaux
+const allReadMore = document.querySelectorAll(".readMore");
+
+// Récupère toutes les modales
+const allModals = document.querySelectorAll(".modal");
+
+// Récupère tous les boutons "exit" des modales
+const allExit = document.querySelectorAll(".exit-article");
+
+
+// -- pour le compteur de vues -- //
+
+// Récupère tous les p contenant "Nombre de vu:"
+const allNumberViews = document.querySelectorAll(".numberViews");
+
+
+// -- pour l'affichage du formulaire -- //
+
+// Récupère tous les boutons déroulant du formulaire
+const allButtonShow = document.querySelectorAll(".showForm");
+
+// Récupère tous les formulaires
 const allForm = document.querySelectorAll(".form-horizontal");
 
 
-
 // ---------------Tableaux------------------
-const arrayReadMorePlusLus = Array.from(allReadMorePlusLus);
 
+// -- compteur de vues -- //
+const arrayNumberViews = Array.from(allNumberViews);
+
+// -- affichage articles les plus lus -- //
 const arrayTextHide = Array.from(allTextHide);
 
-//créé un tableau de la Node List des boutons "readMore"
-const arrayReadMore = Array.from(allReadMore);
+const arrayReadMorePopular = Array.from(allReadMorePopular);
 
-//créé un tableau de la Node List des modales
-const arrayModale = Array.from(allModale);
-
-//créé un tableau de la Node List des boutons "exit"
-const arrayExit = Array.from(allExit);
-
-//créé un tableau de la Node List des p "Nombre de vu:"
-const arrayNumberVue = Array.from(allNumberVue);
-
-//créé un tableau de la node liste des buttons formulaire
-
+// -- affichage du formulaire -- //
 const arrayButtonShow = Array.from(allButtonShow);
 
 const arrayForm = Array.from(allForm);
+
+// -- affichage des modales -- //
+const arrayReadMore = Array.from(allReadMore);
+
+const arrayModals = Array.from(allModals);
+
+const arrayExit = Array.from(allExit);
 
 
 
 // -------------------- FONCTIONS -------------------- //
 
+// ----- Barre de recherche ------ //
 
-// ----- Affichage "Lire la suite" articles plus lus ------ //
+function search_article() {
 
-allReadMorePlusLus.forEach(function(readMorePlusLus) {
+  let input = document.getElementById('searchbar').value
+
+  input = input.toLowerCase();
+
+  allCards.forEach(function(card) {
+
+    if (!card.innerHTML.toLowerCase().includes(input)) {
+      card.style.display="none";
+    }
+
+    else{
+      card.style.display="flex";
+    }
+  })
+}
+
+// ----- Affichage "Lire la suite" articles plus lus & Nombre de vue ------ //
+
+allReadMorePopular.forEach(function(readMorePopular) {
 
   let counter = 10
   let counterBtn = 0
 
-  readMorePlusLus.addEventListener("click", () =>{
+  readMorePopular.addEventListener("click", () =>{
 
     counterBtn++
-    
-
-    i = arrayReadMorePlusLus.indexOf(readMorePlusLus)
+    i = arrayReadMorePopular.indexOf(readMorePopular)
 
     if(counterBtn===1){
       counter++
-      arrayNumberVue[i].textContent = `Nombre de vu : ${(counter)}`
+      arrayNumberViews[i].textContent = `Nombre de vu : ${(counter)}`
       arrayTextHide[i].style.display = "block";
       carousel.style.margin = "0 0 10% 0";
-      arrayReadMorePlusLus[i].textContent = `Fermer l'article`
+      arrayReadMorePopular[i].textContent = `Fermer l'article`
     }
 
     else if(counterBtn===2){
       arrayTextHide[i].style.display = "none";
       carousel.style.margin = "0 0 0 0";
-      arrayReadMorePlusLus[i].textContent = `Lire la suite .....`
+      arrayReadMorePopular[i].textContent = `Lire la suite .....`
       counterBtn = 0;
     }
   })
@@ -93,37 +124,25 @@ allReadMorePlusLus.forEach(function(readMorePlusLus) {
 
 // ----- Affichage modale & Nombre de vue ------ //
 
-//pour chaque élément contenant la classe .readMore, 
 allReadMore.forEach(function(readMore) {
 
   let counter = 0
 
-  //lorsque l'on clique sur un bouton
   readMore.addEventListener("click", () =>{
 
-    //ajoute 1 au compteur du bouton concerné
     counter++
 
-    //prends l'index du bouton
     i = arrayReadMore.indexOf(readMore)
-
     i=i+3
-
-    //sélectionne le p ayant le même index que "i" et remplace le texte d'origine par "Nombre de vu : counter"
-    arrayNumberVue[i].textContent = `Nombre de vu : ${(counter)}`
+    arrayNumberViews[i].textContent = `Nombre de vu : ${(counter)}`
 
     i = arrayReadMore.indexOf(readMore)
+    arrayModals[i].style.display = "block";
 
-    //sélectionne la modale ayant le même index que "i" et l'affiche en block
-    arrayModale[i].style.display = "block";
-
-    //sélectionne le bouton exit ayant le même index que "i"
     arrayExit[i].addEventListener("click", () =>{
-
-      //sélectionne la modale ayant le même index que "i" et l'affiche en none
-      arrayModale[i].style.display = "none";
+      arrayModals[i].style.display = "none";
     })
-
+    
   })
 })
 
@@ -132,54 +151,21 @@ allReadMore.forEach(function(readMore) {
 allButtonShow.forEach(function(buttonShow) {
 
   let counterBtnShow =  0;
+
   i =  arrayButtonShow.indexOf(buttonShow);
 
-  //counter pour le button  show 
   buttonShow.addEventListener('click', () =>{
     counterBtnShow ++;
-    
-  //ouvrir form + show-form + changement text 
+
     if (counterBtnShow===1){
       arrayForm[i].style.display = "flex";
-      arrayButtonShow[i].textContent = `Fermer`
-      
+      arrayButtonShow[i].textContent = `Fermer` 
     }
 
-  // fermé form + changement text
     else if(counterBtnShow===2){
       arrayForm[i].style.display = "none";
       arrayButtonShow[i].textContent = `Cliquez-ici`
       counterBtnShow = 0
-      
-    }
-  }
-    
-  )})
-    
-
-
-// ----- Barre de recherche ------ //
-
-function search_article() {
-
-  //récupère la valeur saisie dans l'input par l'utilisateur
-  let input = document.getElementById('searchbar').value
-
-  //mets toutes les lettres de la valeur saisie en minuscule
-  input = input.toLowerCase();
-
-  //pour chaque élément contenant la classe .card, 
-  allCards.forEach(function(card) {
-
-    // si ce qui est dans l'input de l'utilisateur n'inclue pas le contenu de l'article
-    if (!card.innerHTML.toLowerCase().includes(input)) {
-      //faire disparaitre l'article
-      card.style.display="none";
-    }
-    //sinon
-    else{
-      //faire apparaitre l'article
-      card.style.display="flex";
     }
   })
-}
+})
